@@ -1,5 +1,5 @@
 import { Readability } from '@mozilla/readability';
-import { JSDOM } from 'jsdom';
+import { parseHTML } from 'linkedom';
 
 export const load = async ({ params }): Promise<ReturnType<Readability['parse']>> =>
-  new Readability(new JSDOM(await (await fetch(params.url)).text()).window.document).parse();
+  new Readability(parseHTML(await (await fetch(params.url)).text()).document).parse();
