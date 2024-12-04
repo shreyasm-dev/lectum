@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// generic styles
+
+a {
+  color: #ff1c64;
+
+  &:visited {
+    color: #ff1c64;
+  }
+}
+
+[data-separator-root] {
+  background-color: var(--background);
+  height: 1px;
+  margin: 0.5rem 0;
+  filter: brightness(0.8);
+}
+
+// utilities
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// specific styles
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+header {
+  padding: 1rem 2rem;
+}
+
+main {
+  font-family: var(--reader-font-family);
+  font-size: var(--reader-font-size);
+  max-width: var(--reader-width);
+
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
