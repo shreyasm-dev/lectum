@@ -31,5 +31,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: 'lectum'
-          entrypoint: 'index.js'
+          entrypoint: 'mod.ts'
           root: 'build'
