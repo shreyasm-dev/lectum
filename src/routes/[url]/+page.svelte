@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import Separator from '$components/Separator.svelte';
   import type { Readability } from '@mozilla/readability';
 
   const { url } = $page.params;
@@ -16,6 +17,11 @@
       <a href={url}>{new URL(url).hostname}</a>
     </p>
     <h1>{data.title}</h1>
+    {#if data.byline !== null}
+      <p><i>{data.byline}</i></p>
+    {/if}
+    <Separator />
+    <br />
     {@html data.content}
   {/if}
 {:catch error}
