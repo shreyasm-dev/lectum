@@ -21,7 +21,7 @@
   }
 </script>
 
-<header>
+<header class="print:hidden">
   <Dialog label="Settings">
     <Tabs tabs={['Reading', 'Other']}>
       <Tab value="Reading">
@@ -42,34 +42,31 @@
               items={colors.map((color) => ({ value: color.replaceAll(' ', ''), label: color }))}
               bind:value={theme.colors.background}
               placeholder="Select or enter a color"
-              label="Background color:"
+              label="Background:"
             />
 
             <Combobox
               items={colors.map((color) => ({ value: color.replaceAll(' ', ''), label: color }))}
               bind:value={theme.colors.foreground}
               placeholder="Select or enter a color"
-              label="Foreground color:"
+              label="Foreground:"
             />
 
             <Combobox
               items={colors.map((color) => ({ value: color.replaceAll(' ', ''), label: color }))}
               bind:value={theme.colors.card}
               placeholder="Select or enter a color"
-              label="Secondary color:"
+              label="Secondary:"
             />
           </div>
 
           <Separator />
 
           <div class="space-y-[0.5rem]">
-            <span class="text-sm font-semibold">Fonts</span>
+            <span class="text-sm font-semibold">Typography</span>
 
             <div>
-              Reader font family: <Input
-                bind:value={theme.reader.font.family}
-                placeholder="Enter a font family"
-              />
+              <Input bind:value={theme.reader.font.family} placeholder="Enter a font family" />
             </div>
 
             <Combobox
@@ -78,7 +75,6 @@
                 .map((size) => ({ value: size, label: size }))}
               bind:value={theme.reader.font.size}
               placeholder="Select a font size"
-              label="Reader font size:"
             />
           </div>
         </div></Tab

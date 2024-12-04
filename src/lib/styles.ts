@@ -26,7 +26,7 @@ export const style = {
     },
     font: {
       family: "'Inter', system-ui, sans-serif",
-      size: '16px',
+      size: '18px',
     },
     reader: {
       font: {
